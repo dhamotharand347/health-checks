@@ -29,13 +29,6 @@ def check_cpu_constrained():
     """Returns True if the cpu is having too much usage, False otherwise."""
     return psutil.cpu_percent(1) > 75
 
-def check_no_network():
-    """Returns True if it fails to resolve google's URL, False otherwise."""
-    try:
-        socket.gethostbyname("www.google.com")
-        return False
-    except:
-        return True
 
 def main():
     checks=[
